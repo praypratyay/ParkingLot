@@ -4,7 +4,7 @@
 
 Parking Lot is a typical place in a mall or airport or hospital, where people come to park their vehicles. They are issued a ticket for a spot at this place. Once they are done with their work, they pay the bill and exit the parking lot with their vehicle.
 <p>
-    <img src="./parkinglot.jpg" width="1000" height="500" />
+    <img src="parkinglot.jpg" width="1000" height="500" />
 </p>
 
 We dont want just entities for this. We want to build an entire software system thats takes hard coded input. Persist data in memory.
