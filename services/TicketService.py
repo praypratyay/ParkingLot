@@ -39,13 +39,11 @@ class TicketService:
             vehicle = self.vehicleDAO.save(vehicle)
 
         parkingLot = self.parkingLotDAO.getParkingLotfromGate(gate)
-
         parkingSpot = self.spotAssignmentStrategy.findSpot(vehicleType, parkingLot, gate)
 
         if parkingSpot is None:
             raise NoAvailableSpotException("No empty spots found")
     
-        
         ticket = Ticket()
         ticket.parkingSpot = parkingSpot
         ticket.entryTime = "DATE"

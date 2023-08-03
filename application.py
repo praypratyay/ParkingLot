@@ -21,9 +21,7 @@ def main():
 
     ticketController = TicketController(ticketService)
 
-    print("Application has started")
-
-
+    print("Application has STARTED")
 
 
 main()

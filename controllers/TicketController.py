@@ -37,9 +37,6 @@ class TicketController:
             resp.responseStatus = ResponseStatus.FAILURE
             resp.responseMessage = e
             return resp
-
-            
-
         
         resp.responseStatus = ResponseStatus.SUCCESS
         resp.ticketID = ticket.ID  
