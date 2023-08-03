@@ -6,7 +6,7 @@ class GateType(Enum):
     EXIT = 2
 
 class GateStatus(Enum):
-    OPEN = 21 
+    OPEN = 1 
     CLOSED = 2
 
 class VehicleType(Enum):
@@ -32,5 +32,7 @@ class BillStatus(Enum):
     PAID = 1
     UNPAID = 2
 
-
+class ResponseStatus(Enum):
+    SUCCESS = 1
+    FAILURE = 2
 

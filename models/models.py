@@ -1,64 +1,62 @@
-from abc import ABC, abstractmethod
 from models.enums import *
 
-class ParkingLot:
-    floors = []
-    gates = []
+class BaseModel:
+    id = None
+    createdAt = None
+    lastUpdated = None
+
+class ParkingLot(BaseModel):
+    floors = None
+    gates = None
     capacity = None
 
-class Gate:
-    id = None
+class Gate(BaseModel):
     gateNumber = None
     status = None
-    operator = None 
+    currentOperator = None 
     type = None
 
-
-class ParkingFloor:
-    id = None
+class ParkingFloor(BaseModel):
     floorNumber = None
+    parkingSpots = None
 
-class ParkingSpot:
-    id = None
+class ParkingSpot(BaseModel):
     number = None
-    typesofVehicle = None
+    supportedtypesofVehicle = None
     status = None
     vehicle = None
     parkingFloor = None
  
-class Vehicle:
-    id = None
+class Vehicle(BaseModel):
     vehicleNumber = None
     type = None 
 
-class Operator:
-    id = None 
+class Operator(BaseModel):
     name = None 
     empID = None 
 
-class Ticket:
-    id = None 
+class Ticket(BaseModel):
     parkingSpot = None 
     entryTime = None 
     vehicle = None 
     gate = None 
     operator = None 
 
-class Bill:
-    id = None 
+class Bill(BaseModel):
     exitTime = None 
     ticket = None 
     operator = None 
     amount = None 
     status = None 
     gate = None 
-    onlinepaymentLink = None 
-    payments = None 
+#    onlinepaymentLink = None 
+#    payments = None 
 
-class Payment:
-    id  = None 
+class Payment(BaseModel):
     mode = None 
     amount = None 
     status = None 
-    refID = None 
+    refID = None
+    bill = None
+    time = None
 

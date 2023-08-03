@@ -50,6 +50,7 @@ We dont want just entities for this. We want to build an entire software system 
 ## Classes - Attributes - Interfaces
 
 ### ParkingLot
+- ID
 - Floors (list of ParkingFloor)
 - Gates (list of Gate)
 - Capacity
@@ -58,7 +59,7 @@ We dont want just entities for this. We want to build an entire software system 
 - ID
 - GateNumber
 - Status
-- Operator (person who is assigned to the Gate) 
+- CurrentOperator (person who is assigned to the Gate) 
 - Type
 
 ### GateType
@@ -75,7 +76,7 @@ We dont want just entities for this. We want to build an entire software system 
 ### ParkingSpot
 - ID
 - Number
-- TypesofVehicle (list of VehicleType)
+- SupportedTypesofVehicle (list of VehicleType)
 - Status
 - Vehicle
 - ParkingFloor
@@ -121,6 +122,8 @@ We dont want just entities for this. We want to build an entire software system 
 - Amount
 - Status
 - RefID
+- Bill
+= Time
 
 ### PaymentMode
 - ONLINE/OFFLINE
@@ -133,9 +136,9 @@ We dont want just entities for this. We want to build an entire software system 
 
 ### SpotAssignmentStrategy
 
-- #### EASYSpotAssignmentStrategy (SpotAssignmentStrategy)
-- #### MEDIUMSpotAssignmentStrategy (SpotAssignmentStrategy)
-- #### HARDSpotAssignmentStrategy (SpotAssignmentStrategy)
+- #### RandomSpotAssignmentStrategy (SpotAssignmentStrategy)
+- #### NearestSpotAssignmentStrategy (SpotAssignmentStrategy)
+- #### ComplexSpotAssignmentStrategy (SpotAssignmentStrategy)
 
 ### FeesCalculatorStrategy
 
@@ -150,7 +153,7 @@ We dont want just entities for this. We want to build an entire software system 
 
 ## Notes
 
-- It is a human Parking Lot system. There is an operator which makes sure that vehicle is parked at right place. Ticket generation and bill generation is also done by an operator separately.
+- It is a human Parking Lot system. There is an operator which makes sure that vehicle is parked at right place. Ticket generation and bill generation is also done by the operator currently at the gate.
 
 - We are supporting partial payments in which a bill can be paid through multiple payments of different modes.
 
@@ -179,12 +182,12 @@ We dont want just entities for this. We want to build an entire software system 
 | xx | xx | xx
 
 ### Gate
-| `ID` | `GateNo`  | `LotID` | `OperatorID` | `GateStatusID` | `GateTypeID`
+| `ID` | `GateNo`  | `LotID` | `CurrentOperatorID` | `GateStatusID` | `GateTypeID`
 | --- | --- | --- | --- | --- | ---
 | xx | xx | xx | xx | xx | xx
 
 ### ParkingSpot
-| `ID` | `SpotNo` | `FloorID` | `ParkingStatusID` | `VehicleID`
+| `ID` | `SpotNo` | `parkingFloorID` | `ParkingStatusID` | `VehicleID`
 | --- | --- | --- | --- | ---
 | xx | xx | xx | xx | xx 
 
@@ -209,9 +212,9 @@ We dont want just entities for this. We want to build an entire software system 
 | xx | xx | xx | xx | xx | xx | xx | xx 
 
 ### Payments
-| `ID` | `Amount` | `RefID` | `BillID` | `PaymentModeID` | `PaymentStatusID`
-| --- | --- | --- | --- | --- | ---
-| xx | xx | xx | xx | xx | xx
+| `ID` | `Amount` | `RefID` | `Time` | `BillID` | `PaymentModeID` | `PaymentStatusID`
+| --- | --- | --- | --- | --- | --- | ---
+| xx | xx | xx | xx | xx | xx | xx
 
 ### GateType
 | `ID` | `Value`
@@ -249,11 +252,7 @@ We dont want just entities for this. We want to build an entire software system 
 | xx  | xx 
 
 
-## Algorithms
-
-- **ParkingSpot Calculation 1**: Hello
-
 ## HOW TO RUN?
 ```python 
-python3 client.py
+python3 application.py
 ```
