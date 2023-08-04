@@ -17,7 +17,7 @@ We dont want just entities for this. We want to build an entire software system 
 
 **Q) Are there different kind of vehicles like Four/Two wheelers?**
 
-> _Yes_
+> _Yes._
 
 **Q) Are we allowing multiple two wheelers to be parked in the same spot?**
 
@@ -25,7 +25,7 @@ We dont want just entities for this. We want to build an entire software system 
 
 **Q) Does it have multiple entry and exit gates?**
 
-> _Yes._.
+> _Yes._
 
 **Q) Do we want to have dynamic ticket pricing?**
 
