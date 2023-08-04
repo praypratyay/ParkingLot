@@ -33,7 +33,7 @@ We dont want just entities for this. We want to build an entire software system 
 
 **Q) We will be assigning the spot via a ticket to the incoming vehicle at the time of entry itself and releasing that spot when it leaves through the exit gate. Does that make sense?**
 
-> Yeah. There will be an operator that does this._
+> _Yeah. There will be an operator that does this._
 
 **Q) How are we assigning the parking spot? Do we want to have multiple ways of do this?**
 
